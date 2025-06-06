@@ -29,7 +29,9 @@ public class AdminDashboardController {
         } else {
             int count = 1;
             for (RegisterController.User user : RegisterController.getRegisteredUsers()){
-                userList.append(count).append("Username:").append(user.getUsername()).append(" | Nama:").append(user.getFullName()).append(" | NIM:").append(user.getNim()).append("\n");
+                userList.append(count).append(". Username: ").append(user.getUsername())
+                        .append(" | Nama: ").append(user.getFullName())
+                        .append(" | NIM: ").append(user.getNim()).append("\n");
                 count++;
             }
         }
@@ -38,14 +40,17 @@ public class AdminDashboardController {
     }
 
     public void showSystemInfo(){
-        String systemInfo = "Sistem Informasi XYZ\n" + "Version 1.0.0\n" + "Copyright © 2025 Sistem Informasi XYZ. All rights reserved.";
+        String systemInfo = "Sistem Informasi XYZ\n" + 
+                           "Version 1.0.0\n" + 
+                           "Copyright © 2025 Sistem Informasi XYZ. All rights reserved.";
 
         System.out.println(systemInfo);
     }
 
     private void redirectToLogin(){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/user.login.fxml"));
+            // Fixed FXML path - should be /user/login.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/user/login.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) welcomeLabel.getScene().getWindow();

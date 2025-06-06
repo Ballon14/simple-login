@@ -20,7 +20,7 @@ public class RegisterController {
     private PasswordField passwordField;
 
     @FXML
-    private TextField fullNameTextField;
+    private TextField fullNameField; // Fixed field name to match FXML
 
     @FXML
     private TextField nimField;
@@ -40,8 +40,8 @@ public class RegisterController {
         private String fullName;
         private String nim;
 
-        public User(String userrname, String password, String fullName, String nim) {
-            this.username = userrname;
+        public User(String username, String password, String fullName, String nim) { // Fixed constructor parameter name
+            this.username = username;
             this.password = password;
             this.fullName = fullName;
             this.nim = nim;
@@ -68,7 +68,7 @@ public class RegisterController {
     private void handleRegister(ActionEvent event){
         String username = usernameField.getText();
         String password = passwordField.getText();
-        String fullName = fullNameTextField.getText();
+        String fullName = fullNameField.getText(); // Fixed field name
         String nim = nimField.getText();
 
         User newUser = new User(username, password, fullName, nim);
@@ -76,13 +76,14 @@ public class RegisterController {
 
         clearForm();
 
-        handBackToLogin(event);
+        handleBackToLogin(event); // Fixed method name
     }
 
     @FXML
-    private void handBackToLogin(ActionEvent event){
+    private void handleBackToLogin(ActionEvent event){ // Fixed method name
         try {
-            FXMLLoader loader  = new FXMLLoader(getClass().getResource("/user.login.fxml"));
+            // Fixed FXML path - should be /user/login.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/user/login.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) backButton.getScene().getWindow();
@@ -96,12 +97,11 @@ public class RegisterController {
     private void clearForm(){
         usernameField.clear();
         passwordField.clear();
-        fullNameTextField.clear();
+        fullNameField.clear(); // Fixed field name
         nimField.clear();
     }
 
     public static List<User> getRegisteredUsers() {
         return registeredUsers;
     }
-    
 }
