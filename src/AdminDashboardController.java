@@ -13,7 +13,7 @@ public class AdminDashboardController {
 
     @FXML
     private void initialize() {
-        welcomeLabel.setText("Dashboard di Buka");
+        welcomeLabel.setText("Dashboard Sistem Informasi XYZ");
     }
 
     public void handleLogout(){

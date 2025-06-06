@@ -34,10 +34,10 @@
             <Label text="Password:" GridPane.rowIndex="1" />
             <Label text="Full Name:" GridPane.rowIndex="2" />
             <Label text="NIM:" GridPane.rowIndex="3" />
-            <TextField fx:id="usernameField" promptText="Enter username" GridPane.columnIndex="1" />
-            <PasswordField fx:id="passwordField" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="fullNameField" promptText="Enter full name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="nimField" promptText="Enter NIM" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="usernameField" promptText="Masukan Username" GridPane.columnIndex="1" />
+            <PasswordField fx:id="passwordField" promptText="Masukan Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="fullNameField" promptText="Masukan NIM" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="nimField" promptText="Masukan NIM" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       

@@ -9,7 +9,6 @@
 <VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminDashboardController">
    <children>
       <Label fx:id="welcomeLabel" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Welcome to Simple Information System" />
-      <Label text="Dashboard" />
       
       <VBox alignment="CENTER" spacing="15.0">
          <children>
@@ -26,7 +25,7 @@
          </children>
       </VBox>
       
-      <Label style="-fx-font-size: 10px;" text="© 2025 Simple Information System" />
+      <Label style="-fx-font-size: 10px;" text="© 2025 Sistem Informasi XYZ" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
