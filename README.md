@@ -230,7 +230,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 - GitHub: [@Ballon14](https://github.com/Ballon14)
-- Email: your.email@example.com
+- Email: iqbal140605@Gmail.com
 
 ## 🙏 Acknowledgments
 
