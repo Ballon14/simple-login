@@ -49,7 +49,6 @@ public class AdminDashboardController {
 
     private void redirectToLogin(){
         try{
-            // Fixed FXML path - should be /user/login.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/user/login.fxml"));
             Parent root = loader.load();
 

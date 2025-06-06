@@ -80,9 +80,8 @@ public class RegisterController {
     }
 
     @FXML
-    private void handleBackToLogin(ActionEvent event){ // Fixed method name
+    private void handleBackToLogin(ActionEvent event){ 
         try {
-            // Fixed FXML path - should be /user/login.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/user/login.fxml"));
             Parent root = loader.load();
 
@@ -97,7 +96,7 @@ public class RegisterController {
     private void clearForm(){
         usernameField.clear();
         passwordField.clear();
-        fullNameField.clear(); // Fixed field name
+        fullNameField.clear(); 
         nimField.clear();
     }
 
