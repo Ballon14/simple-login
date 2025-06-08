@@ -20,7 +20,7 @@ public class RegisterController {
     private PasswordField passwordField;
 
     @FXML
-    private TextField fullNameField; // Fixed field name to match FXML
+    private TextField fullNameField;
 
     @FXML
     private TextField nimField;
@@ -76,7 +76,7 @@ public class RegisterController {
 
         clearForm();
 
-        handleBackToLogin(event); // Fixed method name
+        handleBackToLogin(event); 
     }
 
     @FXML
