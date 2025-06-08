@@ -40,7 +40,7 @@ public class RegisterController {
         private String fullName;
         private String nim;
 
-        public User(String username, String password, String fullName, String nim) { // Fixed constructor parameter name
+        public User(String username, String password, String fullName, String nim) { 
             this.username = username;
             this.password = password;
             this.fullName = fullName;
@@ -68,7 +68,7 @@ public class RegisterController {
     private void handleRegister(ActionEvent event){
         String username = usernameField.getText();
         String password = passwordField.getText();
-        String fullName = fullNameField.getText(); // Fixed field name
+        String fullName = fullNameField.getText();
         String nim = nimField.getText();
 
         User newUser = new User(username, password, fullName, nim);
