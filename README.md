@@ -68,7 +68,7 @@ sistem-informasi-xyz/
 
 ### 1. Clone Repository
 ```bash
-git clone [https://github.com/Ballon14/simple-login]
+git clone https://github.com/Ballon14/simple-login
 cd simple-login
 ```
 
@@ -188,8 +188,8 @@ Proyek ini dibuat untuk keperluan pembelajaran dan pengembangan sistem informasi
 
 ## 👨‍💻 Pengembang
 
-- **Developer**: [Iqbal]
-- **Email**: [iqbal140605@Gmail.com]
+- **Developer**: Iqbal
+- **Email**: iqbal140605@Gmail.com
 - **Version**: 1.0.0
 
 ## 📚 Referensi
