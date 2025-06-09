@@ -1,249 +1,203 @@
-# 🚀 Simple Information System
+# Sistem Informasi XYZ
 
-> A modern and elegant JavaFX-based information system with user authentication and admin dashboard functionality.
+Aplikasi desktop sederhana berbasis JavaFX untuk manajemen informasi pengguna dengan fitur registrasi dan dashboard admin.
 
-## 📋 Table of Contents
+## 📋 Deskripsi
 
-- [Features](#-features)
-- [Screenshots](#-screenshots)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Project Structure](#-project-structure)
-- [Usage](#-usage)
-- [Configuration](#-configuration)
-- [Development](#-development)
-- [Contributing](#-contributing)
-- [License](#-license)
+Sistem Informasi XYZ adalah aplikasi desktop yang dibangun menggunakan JavaFX yang menyediakan:
+- Sistem login dan registrasi pengguna
+- Dashboard admin untuk mengelola data pengguna
+- Interface yang user-friendly dengan desain modern
+- Manajemen data pengguna terintegrasi
 
-## ✨ Features
+## ✨ Fitur Utama
 
-### 🔐 **Authentication System**
-- User registration with validation
-- Secure login functionality
-- Session management
+### 🔐 Autentikasi
+- **Login**: Interface login dengan validasi username dan password
+- **Registrasi**: Form pendaftaran pengguna baru dengan data lengkap
+- **Logout**: Sistem logout yang aman
 
-### 👤 **User Management**
-- User registration with full name and NIM
-- User data storage and retrieval
-- Admin view of registered users
+### 👥 Manajemen Pengguna
+- **Registrasi Pengguna**: Tambah pengguna baru dengan data:
+  - Username
+  - Password
+  - Nama Lengkap
+  - NIM (Nomor Induk Mahasiswa)
+- **Lihat Data Pengguna**: Tampilkan daftar semua pengguna terdaftar
 
-### 📊 **Admin Dashboard**
-- Modern and intuitive interface
-- User data management
-- System information display
-- Secure logout functionality
+### 🏠 Dashboard Admin
+- **User Data**: Akses ke informasi semua pengguna terdaftar
+- **System Info**: Informasi versi dan copyright aplikasi
+- **Navigasi**: Menu yang intuitif dan mudah digunakan
 
-### 🎨 **UI/UX**
-- Modern gradient backgrounds
-- Responsive design
-- Card-based layouts
-- Professional color schemes
-- Smooth transitions and effects
+## 🛠️ Teknologi
 
-## 📸 Screenshots
+- **Java**: Bahasa pemrograman utama
+- **JavaFX**: Framework untuk GUI desktop
+- **FXML**: Markup untuk desain interface
+- **Maven/Gradle**: Build tool (opsional)
 
-### Login Screen
-- Clean and modern login interface
-- Gradient background with professional styling
-- Form validation and user feedback
+## 📁 Struktur Proyek
 
-### Registration Form
-- Comprehensive user registration
-- Input validation
-- Consistent design language
+```
+sistem-informasi-xyz/
+├── .vscode/
+│   ├── launch.json          # Konfigurasi debug VS Code
+│   └── settings.json        # Pengaturan project VS Code
+├── src/
+│   ├── Main.java           # Entry point aplikasi
+│   ├── LoginController.java # Controller untuk login
+│   ├── RegisterController.java # Controller untuk registrasi
+│   ├── AdminDashboardController.java # Controller dashboard admin
+│   ├── admin/
+│   │   └── adminDashboard.fxml # Layout dashboard admin
+│   └── user/
+│       ├── login.fxml      # Layout form login
+│       └── register.fxml   # Layout form registrasi
+├── bin/                    # File compiled
+└── lib/                    # External libraries
+```
 
-### Admin Dashboard
-- Professional admin interface
-- Quick access to system functions
-- Modern card-based layout
+## ⚙️ Prasyarat Sistem
 
-## 🔧 Prerequisites
+- **Java JDK**: Versi 11 atau lebih baru
+- **JavaFX SDK**: Versi 24.0.1 atau kompatibel
+- **IDE**: VS Code, IntelliJ IDEA, atau Eclipse (opsional)
 
-Before running this application, make sure you have:
+## 🚀 Instalasi dan Setup
 
-- **Java Development Kit (JDK) 17 or higher**
-- **JavaFX SDK 24.0.1** (or compatible version)
-- **Visual Studio Code** (recommended) with Java extensions
-- **Scene Builder** (optional, for FXML editing)
-
-## 🚀 Installation
-
-### 1. Clone the Repository
+### 1. Clone Repository
 ```bash
-git clone https://github.com/Ballon14/simple-login.git
+git clone [https://github.com/Ballon14/simple-login]
 cd simple-login
 ```
 
 ### 2. Download JavaFX SDK
-1. Download JavaFX SDK from [OpenJFX.io](https://openjfx.io/)
-2. Extract to `C:\Program Files\Java\javafx-sdk-24.0.1\` (Windows)
-3. Update the path in `.vscode/launch.json` and `.vscode/settings.json` if different
+- Download JavaFX SDK dari [OpenJFX](https://openjfx.io/)
+- Extract ke direktori `C:\Program Files\Java\javafx-sdk-24.0.1\` (Windows)
+- Atau sesuaikan path di file konfigurasi
 
-### 3. Configure VS Code
-The project includes pre-configured VS Code settings:
-- Launch configuration for JavaFX
-- Java project settings
-- Referenced libraries configuration
+### 3. Konfigurasi IDE
 
-### 4. Run the Application
+#### Untuk VS Code:
+File konfigurasi sudah tersedia di `.vscode/`:
+- `launch.json`: Konfigurasi untuk menjalankan aplikasi
+- `settings.json`: Pengaturan project Java
+
+#### Untuk IDE lain:
+Tambahkan VM arguments:
+```
+--module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base
+```
+
+### 4. Compile dan Run
 ```bash
-# Using VS Code
-Press F5 or use the "Launch JavaFX App" configuration
+# Compile
+javac -cp "path/to/javafx/lib/*" --module-path "path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base src/*.java -d bin/
 
-# Using Command Line
-java --module-path "path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base Main
+# Run
+java -cp bin --module-path "path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base Main
 ```
 
-## 📁 Project Structure
+## 📖 Cara Penggunaan
 
-```
-simple-information-system/
-├── .vscode/
-│   ├── launch.json          # VS Code launch configuration
-│   └── settings.json        # VS Code project settings
-├── src/
-│   ├── Main.java           # Application entry point
-│   ├── LoginController.java        # Login functionality
-│   ├── RegisterController.java     # Registration functionality
-│   ├── AdminDashboardController.java # Admin dashboard
-│   ├── admin/
-│   │   └── adminDashboard.fxml     # Admin dashboard UI
-│   └── user/
-│       ├── login.fxml              # Login screen UI
-│       └── register.fxml           # Registration form UI
-├── bin/                    # Compiled classes (auto-generated)
-├── lib/                    # External libraries
-└── README.md              # Project documentation
-```
+### 1. Memulai Aplikasi
+- Jalankan `Main.java`
+- Aplikasi akan membuka form login
 
-## 🎯 Usage
+### 2. Registrasi Pengguna Baru
+- Klik tombol "Register" di form login
+- Isi semua field yang diperlukan:
+  - Username (unique)
+  - Password
+  - Nama Lengkap
+  - NIM
+- Klik "Register" untuk menyimpan
+- Otomatis kembali ke form login
 
-### For End Users
+### 3. Login ke Sistem
+- Masukkan username dan password
+- Klik "Login" untuk masuk ke dashboard
 
-1. **Registration**
-   - Click "Register" on login screen
-   - Fill in required information (Username, Password, Full Name, NIM)
-   - Click "Register" to create account
+### 4. Menggunakan Dashboard Admin
+- **User Data**: Lihat daftar semua pengguna terdaftar
+- **System Info**: Informasi versi aplikasi
+- **Logout**: Keluar dari sistem
 
-2. **Login**
-   - Enter username and password
-   - Click "Login" to access dashboard
+## 🎨 Screenshot
 
-3. **Dashboard**
-   - View user data
-   - Check system information
-   - Logout when finished
+### Form Login
+Interface login yang clean dan modern dengan field username dan password.
 
-### For Developers
+### Form Registrasi
+Form pendaftaran lengkap dengan validasi input untuk data pengguna baru.
 
-1. **Adding New Features**
-   - Create new FXML files in appropriate folders
-   - Implement corresponding controller classes
-   - Update navigation logic
+### Dashboard Admin
+Dashboard dengan menu navigasi yang intuitif untuk mengelola sistem.
 
-2. **Styling**
-   - Modify FXML files directly or use Scene Builder
-   - Follow existing color scheme and design patterns
-   - Test across different screen sizes
+## 🔧 Kustomisasi
 
-## ⚙️ Configuration
-
-### JavaFX Path Configuration
-Update these files if your JavaFX installation path differs:
-
-**`.vscode/launch.json`**
-```json
-"vmArgs": "--module-path \"YOUR_JAVAFX_PATH\\lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base"
+### Mengubah Styling
+Edit file `.fxml` untuk mengubah layout dan styling:
+```xml
+<Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Your Text" />
 ```
 
-**`.vscode/settings.json`**
-```json
-"java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "YOUR_JAVAFX_PATH\\lib\\**/*.jar"
-]
-```
+### Menambah Fitur Baru
+1. Buat controller baru di `src/`
+2. Buat layout FXML di folder yang sesuai
+3. Implementasikan logika bisnis
+4. Hubungkan dengan controller utama
 
-### Customization Options
+### Konfigurasi Database
+Saat ini menggunakan in-memory storage. Untuk database persistent:
+1. Tambahkan dependency database (MySQL, PostgreSQL, etc.)
+2. Implementasikan DAO pattern
+3. Update controller untuk menggunakan database
 
-- **Colors**: Modify gradient and color values in FXML files
-- **Fonts**: Update font-size and font-weight in styles
-- **Layout**: Adjust spacing, padding, and dimensions
-- **Icons**: Replace emoji icons with custom graphics
+## 🐛 Troubleshooting
 
-## 🛠 Development
+### Error: Module not found
+- Pastikan JavaFX SDK terinstall dengan benar
+- Periksa path di file konfigurasi
+- Pastikan module path dan add-modules sudah sesuai
 
-### Building from Source
-```bash
-# Compile Java files
-javac -cp "path/to/javafx/lib/*" src/*.java -d bin/
+### Error: FXML Load Exception
+- Periksa path file FXML
+- Pastikan controller class sudah benar
+- Cek fx:controller attribute di file FXML
 
-# Run application
-java -cp "bin:path/to/javafx/lib/*" --add-modules javafx.controls,javafx.fxml Main
-```
+### Performance Issues
+- Optimalkan penggunaan memori
+- Implementasikan lazy loading untuk data besar
+- Gunakan background threads untuk operasi berat
 
-### IDE Setup
-- **IntelliJ IDEA**: Import as Maven/Gradle project or configure JavaFX manually
-- **Eclipse**: Install JavaFX plugin and configure module path
-- **VS Code**: Use provided configuration files
+## 🤝 Kontribusi
 
-### Testing
-- Test all user flows (registration, login, dashboard)
-- Validate form inputs and error handling
-- Test UI responsiveness across different window sizes
+1. Fork repository ini
+2. Buat branch fitur baru (`git checkout -b feature/amazing-feature`)
+3. Commit perubahan (`git commit -m 'Add amazing feature'`)
+4. Push ke branch (`git push origin feature/amazing-feature`)
+5. Buat Pull Request
 
-## 🤝 Contributing
+## 📄 Lisensi
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Copyright © 2025 Sistem Informasi XYZ. All rights reserved.
 
-### Contribution Guidelines
-- Follow existing code style and patterns
-- Add comments for complex functionality
-- Test thoroughly before submitting
-- Update documentation as needed
+Proyek ini dibuat untuk keperluan pembelajaran dan pengembangan sistem informasi.
 
-## 🐛 Known Issues
+## 👨‍💻 Pengembang
 
-- User data is stored in memory only (not persistent)
-- Limited input validation on registration form
-- No password encryption implemented
+- **Developer**: [Iqbal]
+- **Email**: [iqbal140605@Gmail.com]
+- **Version**: 1.0.0
 
-## 🔮 Future Enhancements
+## 📚 Referensi
 
-- [ ] Database integration for persistent storage
-- [ ] Password encryption and security improvements
-- [ ] User profile management
-- [ ] Advanced admin features
-- [ ] Export/import functionality
-- [ ] Multi-language support
-- [ ] Dark/light theme toggle
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@Ballon14](https://github.com/Ballon14)
-- Email: iqbal140605@Gmail.com
-
-## 🙏 Acknowledgments
-
-- JavaFX community for excellent documentation
-- OpenJFX team for maintaining the framework
-- VS Code Java team for great development tools
+- [JavaFX Documentation](https://openjfx.io/)
+- [Oracle JavaFX Tutorials](https://docs.oracle.com/javafx/)
+- [FXML Introduction](https://docs.oracle.com/javafx/2/fxml_get_started/jfxpub-fxml_get_started.htm)
 
 ---
 
-<div align="center">
-
-**⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ using JavaFX
-
-</div>
+**Selamat menggunakan Sistem Informasi XYZ! 🚀**
